@@ -54,7 +54,7 @@ sgMail.setApiKey(process.env.SENDGRID_KEY);
  *      content:
  *        application/json:
  *          schema:
- *            property:
+ *            properties:
  *              email:
  *                type: string
  *              password:
@@ -112,7 +112,7 @@ router.post('/signup', async (req, res) => {
  *      content:
  *        application/json:
  *          schema:
- *            property:
+ *            properties:
  *              email:
  *                type: string
  *              password:
@@ -199,7 +199,7 @@ router.get('/users', async (req,res) => {
  *      content:
  *        application/json:
  *          schema:
- *            property:
+ *            properties:
  *              refreshToken:
  *                type: string
  *    responses:

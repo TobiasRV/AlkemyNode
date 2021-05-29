@@ -59,7 +59,7 @@ const { validate } = require('../validations/media.validation');
  * /movies:
  *   get:
  *    summary: Returns the uuid, image and name of all the movies, can be searched by title, filtered by genre and order
- *    tags: [Genres]
+ *    tags: [Media]
  *    security:
  *    - bearerAuth: []
  *    parameters:
@@ -184,7 +184,7 @@ router.get('/:uuid', authenticateToken ,async (req , res)=>{
  *      content:
  *        application/json:
  *          schema:
- *            property:
+ *            properties:
  *              image:
  *                type: string
  *                description: The URL to the image of the Media

@@ -83,7 +83,7 @@ router.get('/' , auth.authenticateToken ,async (req , res)=>{
  * /genres:
  *   post:
  *    summary: Creates a new genre
- *    tags: [Characters]
+ *    tags: [Genres]
  *    security:
  *      - bearerAuth: []
  *    requestBody:
@@ -91,7 +91,6 @@ router.get('/' , auth.authenticateToken ,async (req , res)=>{
  *      content:
  *        application/json:
  *          schema:
- *            property:
  *              properties:
  *                  uuid:
  *                    type: string

@@ -168,7 +168,7 @@ router.get('/:uuid' , auth.authenticateToken ,async (req , res)=>{
  *      content:
  *        application/json:
  *          schema:
- *            property:
+ *            properties:
  *                image:
  *                  type: string
  *                  description: The URL to the image of the character
@@ -320,7 +320,7 @@ router.put('/:uuid', auth.authenticateToken ,async (req, res) => {
     try {
         if(newCharapter.hasOwnProperty('uuid')) throw new Error('Cannot change the uuid');
         let oldCharacter = await Character.findOne({ where: {uuid}});
-        oldCharacter.update({id: oldCharacter.id, ...newCharapter});
+        await oldCharacter.update({id: oldCharacter.id, ...newCharapter});
         delete oldCharacter.dataValues.id;
         res.json(oldCharacter);
     } catch (error) {
